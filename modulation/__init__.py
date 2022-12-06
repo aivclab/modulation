@@ -10,11 +10,11 @@ from apppath import AppPath
 
 __project__ = "Modulation"
 __author__ = "Christian Heider Nielsen"
-__version__ = "0.0.3"
+__version__ = "0.0.4"
 __doc__ = r"""
 .. module:: modulation
    :platform: Unix, Windows
-   :synopsis: A set of tools build for the signal processing.
+   :synopsis: A set of tools build for general signal processing.
 
 .. moduleauthor:: Christian Heider Nielsen <christian.heider@alexandra.dk>
 
