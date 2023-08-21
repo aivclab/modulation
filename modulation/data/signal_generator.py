@@ -26,7 +26,6 @@ def multifreq(x: numpy.ndarray) -> numpy.ndarray:
 
 
 def triangle(x: numpy.ndarray, section_length: float = 0.5) -> numpy.ndarray:
-
     section0 = x < section_length
     section1 = (x >= section_length) & (x < 2 * section_length)
     section2 = (x >= 2 * section_length) & (x < 3 * section_length)
@@ -40,7 +39,6 @@ def triangle(x: numpy.ndarray, section_length: float = 0.5) -> numpy.ndarray:
 
 
 def sawtooth(x: numpy.ndarray, section_length: float = 0.5) -> numpy.ndarray:
-
     section0 = x < section_length
     section1 = (x >= section_length) & (x < 2 * section_length)
     section2 = (x >= 2 * section_length) & (x < 3 * section_length)

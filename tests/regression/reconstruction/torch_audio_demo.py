@@ -49,7 +49,6 @@ class TestFunctional(unittest.TestCase):
     waveform_train, sr_train = torchaudio.load(test_filepath)
 
     def test_torchscript_spectrogram(self):
-
         tensor = torch.rand((1, 1000))
         n_fft = 400
         ws = 400
@@ -92,7 +91,6 @@ class TestFunctional(unittest.TestCase):
         )
 
     def test_batch_griffinlim(self):
-
         torch.random.manual_seed(42)
         tensor = torch.rand((1, 201, 6))
 
@@ -423,7 +421,6 @@ class TestFunctional(unittest.TestCase):
         self._test_linearity_of_istft(data_size, kwargs4, atol=1e-5, rtol=1e-8)
 
     def test_batch_istft(self):
-
         stft = torch.tensor(
             [
                 [[4.0, 0.0], [4.0, 0.0], [4.0, 0.0], [4.0, 0.0], [4.0, 0.0]],
@@ -437,7 +434,6 @@ class TestFunctional(unittest.TestCase):
     def _test_create_fb(
         self, n_mels=40, sample_rate=22050, n_fft=2048, fmin=0.0, fmax=8000.0
     ):
-
         librosa_fb = librosa.filters.mel(
             sr=sample_rate,
             n_fft=n_fft,
@@ -556,7 +552,6 @@ class TestFunctional(unittest.TestCase):
             self._test_batch(F.detect_pitch_frequency, waveform, sample_rate)
 
     def _test_batch_shape(self, functional, tensor, *args, **kwargs):
-
         kwargs_compare = {}
         if "atol" in kwargs:
             atol = kwargs["atol"]
@@ -586,7 +581,6 @@ class TestFunctional(unittest.TestCase):
         return tensors, expected
 
     def _test_batch(self, functional, tensor, *args, **kwargs):
-
         tensors, expected = self._test_batch_shape(functional, tensor, *args, **kwargs)
 
         kwargs_compare = {}
@@ -612,7 +606,6 @@ class TestFunctional(unittest.TestCase):
         computed = functional(tensors.clone(), *args, **kwargs)
 
     def test_torchscript_create_fb_matrix(self):
-
         n_stft = 100
         f_min = 0.0
         f_max = 20.0
@@ -635,7 +628,6 @@ class TestFunctional(unittest.TestCase):
         )
 
     def test_torchscript_DB_to_amplitude(self):
-
         x = torch.rand((1, 100))
         ref = 1.0
         power = 1.0
@@ -685,7 +677,6 @@ class TestFunctional(unittest.TestCase):
         self.assertTrue(torch.allclose(spec, x2, atol=5e-5))
 
     def test_torchscript_create_dct(self):
-
         n_mfcc = 40
         n_mels = 128
         norm = "ortho"
@@ -693,28 +684,24 @@ class TestFunctional(unittest.TestCase):
         _test_torchscript_functional(F.create_dct, n_mfcc, n_mels, norm)
 
     def test_torchscript_mu_law_encoding(self):
-
         tensor = torch.rand((1, 10))
         qc = 256
 
         _test_torchscript_functional(F.mu_law_encoding, tensor, qc)
 
     def test_torchscript_mu_law_decoding(self):
-
         tensor = torch.rand((1, 10))
         qc = 256
 
         _test_torchscript_functional(F.mu_law_decoding, tensor, qc)
 
     def test_torchscript_complex_norm(self):
-
         complex_tensor = torch.randn(1, 2, 1025, 400, 2)
         power = 2
 
         _test_torchscript_functional(F.complex_norm, complex_tensor, power)
 
     def test_mask_along_axis(self):
-
         specgram = torch.randn(2, 1025, 400)
         mask_param = 100
         mask_value = 30.0
@@ -725,7 +712,6 @@ class TestFunctional(unittest.TestCase):
         )
 
     def test_mask_along_axis_iid(self):
-
         specgrams = torch.randn(4, 2, 1025, 400)
         mask_param = 100
         mask_value = 30.0
