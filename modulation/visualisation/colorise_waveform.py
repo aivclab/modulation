@@ -53,11 +53,18 @@ def color_plot(
 
 if __name__ == "__main__":
 
-    def main():
+    def main2():
         """description"""
         xy = (numpy.random.random((1000, 2)) - 0.5).cumsum(axis=0)
 
         color_plot(xy)
+        pyplot.show()
+
+    def main():
+        """description"""
+        xy = (numpy.random.random((1000, 2)) - 0.5).cumsum(axis=0)
+
+        color_plot(xy, numpy.random.random((1000)))
         pyplot.show()
 
     main()

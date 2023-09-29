@@ -11,9 +11,8 @@ from typing import List, Tuple
 
 import torch
 from draugr.writers import Writer
-from torch import nn
-
 from modulation.torch_utilities import torch_transforms
+from torch import nn
 
 __all__ = ["UNetConvBlock", "UNetDeconvBlock", "UNet"]
 

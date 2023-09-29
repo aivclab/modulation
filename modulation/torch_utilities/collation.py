@@ -11,9 +11,8 @@ from typing import Iterable, Tuple
 
 import torch
 from draugr.torch_utilities import global_torch_device
-from torch.types import Device
-
 from modulation.torch_utilities.padding import min_length_pad, pad_sequence
+from torch.types import Device
 
 __all__ = ["collate_pad_wrapped", "collate_transform_wrapped"]
 

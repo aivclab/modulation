@@ -21,7 +21,6 @@ __all__ = [
 from typing import Sequence, Tuple
 
 import numpy
-
 from modulation.signal_utilities.segmentation import runs_of_non_zero
 
 

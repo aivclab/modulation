@@ -7,9 +7,8 @@ __doc__ = r"""
            Created on 15-01-2021
            """
 
-from scipy.signal import sweep_poly
-
 from modulation.data.signal_generator import SignalGenerator
+from scipy.signal import sweep_poly
 
 if __name__ == "__main__":
 
@@ -61,7 +60,6 @@ if __name__ == "__main__":
     def asiuhda2():
         """description"""
         from math import sin, cos
-        from scipy.signal import square, sawtooth, gausspulse
         import numpy
 
         """

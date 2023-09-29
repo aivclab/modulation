@@ -18,7 +18,6 @@ from draugr.torch_utilities import (
     trainable_parameters,
 )
 from draugr.visualisation import progress_bar
-
 from modulation.classification.procedure import (
     single_epoch_evaluation,
     single_epoch_fitting,
